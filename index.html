@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pai's portfolio</title>
-    <!-- This line links your HTML to your new CSS file -->
     <link rel="stylesheet" href="stylesheet.css">
     <script type="module" src="https://googleapis.com"></script>
 </head>
@@ -34,11 +33,11 @@
             <!-- This empty box is styled by your CSS and ready for the 3D model -->
             <model-viewer 
                 id="canvas-container"
-                src="robot iteration 10 chassis.gltf" 
-                alt="A 3D model of my design"
-                auto-rotate 
+                src="mymodel.glb" 
+                environment-image="neutral"
+                shadow-intensity="1"
                 camera-controls 
-                ar>
+                auto-rotate>
             </model-viewer>
         </section>
     </div>
