@@ -6,6 +6,7 @@
     <title>Pai's portfolio</title>
     <!-- This line links your HTML to your new CSS file -->
     <link rel="stylesheet" href="stylesheet.css">
+    <script type="module" src="https://googleapis.com"></script>
 </head>
 <body>
     <div id="app-wrapper">
@@ -15,9 +16,30 @@
         </section>
         <section id="projects">
             <h2 id="projects-heading">Projects</h2>
-
+            <ul id="projects-list">
+                <li><a href="vatska.com">Vatska</a>: A website I created and actively maintain.</li>
+                <li>projects and interests
+                    <ul>
+                        <li>3D modeling and animation</li>
+                        <li>Web development</li>
+                        <li>Artificial intelligence</li>
+                    </ul>
+                </li>
+                <li>sports and competitions</li>
+            </ul>
+        </section>
+        <section id="recent-projects">
+            <h2 id="activities-heading">Recent Projects</h2>
+            <p>Fire fighting robot development</p>
             <!-- This empty box is styled by your CSS and ready for the 3D model -->
-            <div id="canvas-container"></div>
+            <model-viewer 
+                id="canvas-container"
+                src="robot iteration 10 chassis.gltf" 
+                alt="A 3D model of my design"
+                auto-rotate 
+                camera-controls 
+                ar>
+            </model-viewer>
         </section>
     </div>
 </body>

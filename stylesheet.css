@@ -1,5 +1,4 @@
 /* General page styling */
-/* FIXED: Restored complete Google Fonts URL */
 @import url('https://googleapis.com');
 
 /* Lock the browser window completely solid */
@@ -9,8 +8,21 @@ html, body {
     height: 100vh;
     overflow: hidden; /* Prevents the body from scrolling */
     background: #0f172a; 
-    color: #f8fafc; 
-    font-family: 'Arvo', serif;
+    color: #38bdf8; 
+    font-family: 'Arvo', sans-serif;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+ul{
+    margin-bottom: 2vh;
+}
+li {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 /* CRITICAL FIX: The wrapper captures the scrollbar and handles snapping */
@@ -28,30 +40,25 @@ section {
     scroll-snap-align: start;
     scroll-snap-stop: always; /* Forces browser to stop at each section */
     overflow: hidden;         
-    
     /* Perfect center alignment for text and canvases */
     display: flex;
     flex-direction: column;
-    justify-content: center; 
     align-items: center;
     box-sizing: border-box;
-    padding: 40px 20px;
+    padding: 5vh;
 }
 
 /* Heading style */
 #welcome {
     color: #38bdf8; 
     font-size: 2.5rem;
-    margin: 0 0 10px 0;
 }
 
 /* Paragraph text style */
 #description {
     color: #94a3b8; 
     font-size: 1.2rem;
-    max-width: 600px;
     margin: auto 0 0 0; /* Pushes text cleanly to the bottom */
-    padding-bottom: 40px; 
 }
 
 #introduction {
@@ -64,11 +71,12 @@ section {
     font-size: 1.5rem;
 }
 
-/* Responsive container for your upcoming 3D model */
+/* Container for your active 3D model */
 #canvas-container {
     width: 100%;
     max-width: 800px;
-    height: 50vh; /* Scaled down from 500px so it fits smaller screens */
-    border: 2px dashed #38bdf8; 
-    border-radius: 12px;
+    height: 50vh; 
+    background-color: transparent; /* Allows your dark page background to show through */
+    outline: none; /* Removes focus borders when clicking the 3D model */
 }
+
