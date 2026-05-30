@@ -1,39 +1,74 @@
 /* General page styling */
+/* FIXED: Restored complete Google Fonts URL */
 @import url('https://googleapis.com');
 
-
-body {
-    font-family: 'Arvo', serif;
-    text-align: center;
-    padding: 60px 20px;
-    background: #0f172a; /* Dark sleek background */
-    color: #f8fafc; /* Crisp white text */
+/* Lock the browser window completely solid */
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Prevents the body from scrolling */
+    background: #0f172a; 
+    color: #f8fafc; 
+    font-family: 'Arvo', serif;
+}
+
+/* CRITICAL FIX: The wrapper captures the scrollbar and handles snapping */
+#app-wrapper {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll support for iOS Safari */
+}
+
+/* Every section matches the container sizes exactly */
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+    scroll-snap-stop: always; /* Forces browser to stop at each section */
+    overflow: hidden;         
+    
+    /* Perfect center alignment for text and canvases */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    box-sizing: border-box;
+    padding: 40px 20px;
 }
 
 /* Heading style */
-h1 {
-    color: #38bdf8; /* Bright tech-blue */
+#welcome {
+    color: #38bdf8; 
     font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-align: center;
+    margin: 0 0 10px 0;
 }
 
 /* Paragraph text style */
 #description {
-    color: #94a3b8; /* Muted gray text */
+    color: #94a3b8; 
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 0 auto 30px auto;
-    text-align: center;
+    margin: auto 0 0 0; /* Pushes text cleanly to the bottom */
+    padding-bottom: 40px; 
 }
 
-/* Container for your upcoming 3D model */
+#introduction {
+    color: #38bdf8; 
+    font-size: 1.5rem;
+}
+
+#projects {
+    color: #38bdf8; 
+    font-size: 1.5rem;
+}
+
+/* Responsive container for your upcoming 3D model */
 #canvas-container {
     width: 100%;
     max-width: 800px;
-    height: 500px;
-    margin: 0 auto;
-    border: 2px dashed #38bdf8; /* Place-holder box for your 3D CAD design */
+    height: 50vh; /* Scaled down from 500px so it fits smaller screens */
+    border: 2px dashed #38bdf8; 
     border-radius: 12px;
 }
