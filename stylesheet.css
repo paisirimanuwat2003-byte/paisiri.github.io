@@ -54,11 +54,16 @@ section {
     font-size: 2.5rem;
 }
 
+#profile-pic{
+    height: 40vh;
+    width: auto;
+}
+
 /* Paragraph text style */
 #description {
     color: #94a3b8; 
     font-size: 1.2rem;
-    margin: auto 0 0 0; /* Pushes text cleanly to the bottom */
+    margin-bottom: auto; /* Pushes text cleanly to the bottom */
 }
 
 #introduction {
@@ -69,6 +74,11 @@ section {
 #projects {
     color: #38bdf8; 
     font-size: 1.5rem;
+}
+
+#activities-heading {
+    color: #38bdf8; 
+    font-size: 2.5rem;
 }
 
 /* Container for your active 3D model */
