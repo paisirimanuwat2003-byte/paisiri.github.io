@@ -74,8 +74,8 @@ section {
 /* Container for your active 3D model */
 #canvas-container {
     width: 100%;
-    max-width: 800px;
-    height: 50vh; 
+    max-width: 1500px; /* Limits the canvas size on larger screens */
+    height: 70vh; 
     background-color: transparent; /* Allows your dark page background to show through */
     outline: none; /* Removes focus borders when clicking the 3D model */
 }
