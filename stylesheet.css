@@ -64,6 +64,7 @@ section {
     color: #94a3b8; 
     font-size: 1.2rem;
     margin-bottom: auto; /* Pushes text cleanly to the bottom */
+    width: 50%; /* Limits the width of the description for better readability */
 }
 
 #introduction {
