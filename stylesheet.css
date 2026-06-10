@@ -48,16 +48,25 @@ section {
     padding: 5vh;
 }
 
-/* Heading style */
-#welcome {
-    color: #38bdf8; 
-    font-size: 2.5rem;
+.Logo-container{
+    height: 10%;
+    width: auto;
+    margin-bottom: 5vh; /* Adds space between the logo and the profile picture */
 }
 
-#profile-pic{
-    height: 60vh;
+.Logo-container img {
+    height: 100%;
     width: auto;
-    padding: 2%;
+}
+
+.Logo-container:hover img {
+    filter: brightness(0) invert(1); /* Inverts colors on hover for a striking effect */
+    transition: filter 1s ease; /* Smooth transition for the hover effect */
+}
+
+#profile-pic {
+    height: 60%;
+    margin-bottom: 5vh; /* Adds space between the profile picture and the description text */
 }
 
 /* Paragraph text style */
@@ -78,13 +87,22 @@ section {
     text-decoration: none;
 }
 .project-link:hover {
-    color: #0ea5e9;
+    color: white;
     transition: color 0.3s ease;
 }
 
 #projects {
     color: #38bdf8; 
     font-size: 1.5rem;
+}
+
+#vatska-link {
+    color: #38bdf8; 
+    text-decoration: none;
+}
+#vatska-link:hover {
+    color: white;
+    transition: color 0.3s ease;
 }
 
 #activities-heading {
@@ -101,3 +119,17 @@ section {
     outline: none; /* Removes focus borders when clicking the 3D model */
 }
 
+
+@media (max-width: 768px) {
+    #welcome {
+        display: none; /* Smaller heading on mobile */
+    }
+    #profile-pic {
+        height: 50%; /* Smaller profile picture on mobile */
+    }
+    /* Responsive adjustments for smaller screens */
+    #description {
+        width: 90%; /* Makes the description take more horizontal space on mobile */
+        font-size: 1rem; /* Slightly smaller text for better readability on small screens */
+    }
+}
