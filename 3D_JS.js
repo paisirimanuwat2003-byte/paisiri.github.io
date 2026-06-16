@@ -1,11 +1,11 @@
 // 1. Store the event data in an Array of Objects
 const eventsData = [
-  { year: "2015", title: "Introduction to 3D Modeling", desc: "I started my journey in 3D modeling in 2015 with Techne for minecraft." },
-  { year: "2016", title: "Mine imator", desc: "in early 2016, I commenced my animation journey with Mine imator." },
-  { year: "2016", title: "Incorporating SketchUp", desc: "I later incorporated SketchUp for more complex architectural models in 2016." },
-  { year: "2016", title: "Cinema 4D Adoption", desc: "In 2016, I began using Cinema 4D for more advanced 3D modeling, rigging and animation." },
-  { year: "2017", title: "Blender Experimentation", desc: "I also experimented with Blender due to its open-source nature." },
-  { year: "2025", title: "Onshape Exploration", desc: "Most recently, in 2025, I have been exploring Onshape for its cloud-based collaboration features." },
+  { year: "2015", title: "Introduction to 3D Modeling", desc: "I started my journey in 3D modeling in 2015 with Techne for minecraft.", img: "./src/techne.png" },
+  { year: "2016", title: "Mine imator", desc: "in early 2016, I commenced my animation journey with Mine imator.", img: "./src/mine_imator.gif" },
+  { year: "2016", title: "Incorporating SketchUp", desc: "I later incorporated SketchUp for more complex architectural models in 2016.", img: "./src/sketchup.png" },
+  { year: "2016", title: "Cinema 4D Adoption", desc: "In 2016, I began using Cinema 4D for more advanced 3D modeling, rigging and animation.", img: "./src/C4D.png" },
+  { year: "2017", title: "Blender Experimentation", desc: "I also experimented with Blender due to its open-source nature.", img: "./src/blender.png" },
+  { year: "2025", title: "Onshape Exploration", desc: "Most recently, in 2025, I have been exploring Onshape for its cloud-based collaboration features.", img: "./src/onshape_1.png" },
 
 ];
 
@@ -15,6 +15,7 @@ const progressLine = document.getElementById('progress-line');
 const yearEl = document.getElementById('event-year');
 const titleEl = document.getElementById('event-title');
 const descEl = document.getElementById('event-desc');
+const imgEl = document.getElementById('event-image');
 const playBtn = document.getElementById('btn-play');
 const resetBtn = document.getElementById('btn-reset');
 
@@ -43,6 +44,7 @@ function goToEvent(index) {
   yearEl.innerText = event.year;
   titleEl.innerText = event.title;
   descEl.innerText = event.desc;
+  imgEl.src = event.img;
 }
 
 // 4. Add Click Listeners to each Dot

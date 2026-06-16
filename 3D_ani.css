@@ -64,22 +64,16 @@ section {
     transition: filter 1s ease; /* Smooth transition for the hover effect */
 }
 
-#profile-pic {
-    height: 60%;
-    margin-bottom: 5vh; /* Adds space between the profile picture and the description text */
-}
-
-/* Paragraph text style */
-#description {
-    color: #94a3b8; 
-    font-size: 1.2rem;
-    margin-bottom: auto; /* Pushes text cleanly to the bottom */
-    width: 50%; /* Limits the width of the description for better readability */
-}
-
 #introduction {
     color: #38bdf8; 
     font-size: 1.5rem;
+}
+
+#event-image {
+    width: 100%;
+    max-width: 400px; /* Limits the image size on larger screens */
+    height: auto; /* Maintains aspect ratio */
+    margin-top: 20px; /* Adds space above the image */
 }
 
 .timeline-wrapper {
