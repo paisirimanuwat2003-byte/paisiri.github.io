@@ -287,15 +287,22 @@ section {
 }
 
 @media (max-width: 768px) {
-    #welcome {
-        display: none; /* Smaller heading on mobile */
+    #introduction{
+        display: grid;
+        grid-template-areas:
+        'logo'
+        'pfp'
+        'desc';
     }
-    #profile-pic {
-        height: 40%; /* Smaller profile picture on mobile */
+
+    .Logo-container {
+        height: 15vh; /* Reduces the logo size on smaller screens */
     }
-    /* Responsive adjustments for smaller screens */
-    #description {
-        width: 90%; /* Makes the description take more horizontal space on mobile */
-        font-size: 1rem; /* Slightly smaller text for better readability on small screens */
+    #pfp {
+        height: 20vh; /* Reduces the profile picture size on smaller screens */
+    }
+    #desc{
+        font-size: 0.7rem; /* Slightly smaller text for better readability */
+        text-align: left; /* Aligns the description to the left on smaller screens */
     }
 }
