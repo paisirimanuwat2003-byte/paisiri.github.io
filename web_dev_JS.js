@@ -1,10 +1,10 @@
 // 1. Store the event data in an Array of Objects
 const eventsData = [
-  { year: "2014", title: "Introduction to Web Development", desc: "I started my journey in web development in 2014 with adobe dreamweaver.", img: "./src/web_dev.png" },
-  { year: "2015", title: "Learning the convenience of web builders", desc: "In 2015, I discovered web builders and began using platforms like Weebly and Wix.", img: "./src/web_builder.png" },
-  { year: "2019", title: "Realizing the limitations of web builders", desc: "In 2019, I realized the limitations of web builders and decided to dive deeper into front-end web development.", img: "./src/custom_web_dev.png" },
-  { year: "2025", title: "Docker, Websocket and SQLite", desc: "In 2025, I had the opportunity to work with Docker, Websocket and SQLite.", img: "./src/docker_websocket_sqlite.png" },
-  { year: "2021", title: "Renovation and Maintenance of Vatska.com", desc: "In 2021, I spearheaded the renovation of Vatska Company Limited's website.", img: "./src/website_renovation.png" },
+  { year: "2014", title: "Introduction to Web Development", desc: "I started my journey in web development, in 2014, with adobe dreamweaver.", img: "./src/Dreamweaver.jpg" },
+  { year: "2015", title: "Learning the convenience of web builders", desc: "In 2015, I discovered web builders and began using platforms such as Weebly and Wix.", img: "./src/web_1.png" },
+  { year: "2019", title: "Realizing the limitations of web builders", desc: "In 2019, I realized the limitations of web builders and decided to dive deeper into front-end web development.", img: "./src/vatska_2021.png" },
+  { year: "2025", title: "Docker, Websocket and SQLite", desc: "In 2025, I had the opportunity to work with Docker, Websocket and SQLite.", img: "./src/TicTacToe.png" },
+  { year: "2021-Present", title: "Renovation and Maintenance of Vatska.com", desc: "Since 2021-Present, I spearheaded the initial renovation and the ongoing maintenance of Vatska Company Limited's website.", img: "./src/vatska_com.png" },
 ];
   
 
