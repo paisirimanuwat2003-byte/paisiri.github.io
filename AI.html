@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pai's portfolio</title>
+    <link rel="stylesheet" href="3D_ani.css">
+    <!-- CORRECTED URL -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div id="app-wrapper">
+        <section id="introduction">
+            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector.png" alt="Welcome Image"></a>
+            <h1 id="welcome">3D Modeling and Animation Journey</h1>
+            <div class="timeline-wrapper">
+                <div class="timeline-track">
+                    <div class="timeline-progress" id="progress-line"></div>
+                    
+                    <div class="timeline-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                    <button class="dot" data-index="5"></button>
+                    </div>
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2015</h2>
+                    <h3 id="event-title">Introduction to 3D Modeling</h3>
+                    <p id="event-desc">I started my journey in 3D modeling in 2015 with Techne for minecraft.</p>
+                    <img id="event-image" src="./src/techne.png" alt="Techne Software">
+                </div>
+
+                <div class="timeline-controls">
+                    <button id="btn-play">Auto-Play Sequence</button>
+                    <button id="btn-reset">Reset</button>
+                </div>
+
+            </div>
+        </section>
+        <section id="recent-projects">
+            <h2 id="activities-heading">Recent Projects</h2>
+            <p>Fire fighting robot development</p>
+            <!-- This empty box is styled by your CSS and ready for the 3D model -->
+            <model-viewer 
+                id="canvas-container"
+                src="./src/robot iteration 10 chassis.glb" 
+                environment-image="neutral"
+                shadow-intensity="1"
+                camera-controls 
+                auto-rotate
+                ar
+                environment-image="neutral"  
+                exposure="0.5"               
+                shadow-intensity="1"         
+                shadow-softness="0.5">       
+            </model-viewer>
+        </section>
+    </div>
+
+    <script src="3D_JS.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pai's portfolio</title>
+    <link rel="stylesheet" href="3D_ani.css">
+    <!-- CORRECTED URL -->
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div id="app-wrapper">
+        <section id="introduction">
+            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector.png" alt="Welcome Image"></a>
+            <h1 id="welcome">Web Development Journey and achievements</h1>
+            <div class="timeline-wrapper">
+                <div class="timeline-track">
+                    <div class="timeline-progress" id="progress-line"></div>
+                    
+                    <div class="timeline-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
+                    <button class="dot" data-index="4"></button>
+                    <button class="dot" data-index="5"></button>
+                    </div>
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2014</h2>
+                    <h3 id="event-title">Introduction to Web Development</h3>
+                    <p id="event-desc">I started my journey in web development in 2014 with adobe dreamweaver and hosted my first website ever on 5GBfree.</p>
+                    <img id="event-image" src="./src/web_dev.png" alt="Web Development">
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2015</h2>
+                    <h3 id="event-title">Learning the convenience of web builders</h3>
+                    <p id="event-desc">In 2015, I discovered web builders and began using platforms like Weebly and Wix to create websites more efficiently.</p>
+                    <img id="event-image" src="./src/web_builder.png" alt="Web Builder">
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2019</h2>
+                    <h3 id="event-title">Realizing the limitations of web builders</h3>
+                    <p id="event-desc">In 2019, I realized the limitations of web builders and decided to dive deeper into front-end web development, through CSS, HTML, and JavaScript.</p>
+                    <img id="event-image" src="./src/custom_web_dev.png" alt="Custom Web Development">
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2025</h2>
+                    <h3 id="event-title">Docker, Websocket and SQLite</h3>
+                    <p id="event-desc">In 2025, I had the opportunity to work with Docker, Websocket and SQLite to simulate a server environment for a web application, specifically
+                     for a tic-tac-toe game.</p>
+                    <img id="event-image" src="./src/docker_websocket_sqlite.png" alt="Docker, Websocket and SQLite">
+                </div>
+
+                <div class="timeline-content" id="content-display">
+                    <h2 id="event-year">2021-present</h2>
+                    <h3 id="event-title">Renovation and Maintenance of Vatska.com</h3>
+                    <p id="event-desc">In 2021, I spearheaded the renovation of Vatska Company Limited's website, focusing on improving user experience and mordernizing the user 
+                        interface. Alongside this, I have been actively maintaining the website for approximately 5 years until now, ensuring it remains up-to-date and functional 
+                        while adding new necessary features. This opportunity has allowed me to enhance my skills in web development, as well as gain valuable experience in project
+                         management and client communication.</p>
+                    <img id="event-image" src="./src/website_renovation.png" alt="Website Renovation">
+                </div>
+
+            </div>
+        </section>
+        <section id="recent-projects">
+            <h2 id="activities-heading">Recent Projects</h2>
+            <p>Fire fighting robot development</p>
+            <!-- This empty box is styled by your CSS and ready for the 3D model -->
+            <model-viewer 
+                id="canvas-container"
+                src="./src/robot iteration 10 chassis.glb" 
+                environment-image="neutral"
+                shadow-intensity="1"
+                camera-controls 
+                auto-rotate
+                ar
+                environment-image="neutral"  
+                exposure="0.5"               
+                shadow-intensity="1"         
+                shadow-softness="0.5">       
+            </model-viewer>
+        </section>
+    </div>
+
+    <script src="3D_JS.js"></script>
+</body>
+</html>
