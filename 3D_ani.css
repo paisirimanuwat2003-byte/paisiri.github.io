@@ -92,11 +92,31 @@ section {
 }
 
 #event-image {
-    width: 70%;
     max-width: 400px; /* Limits the image size on larger screens */
     height: auto; /* Maintains aspect ratio */
     margin-top: 20px; /* Adds space above the image */
     max-height: 300px;
+}
+
+#code-block-container {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Centers the code block horizontally */
+    margin-top: 20px; /* Adds space above the code block */
+}
+
+#code-block {
+    background-color: #1e293b; /* Dark background for code */
+    color: #38bdf8; /* Blue text for code */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+    font-size: 1rem; /* Adjust font size for readability */
+    overflow: auto; /* Allows horizontal scrolling if code is too wide */
+    max-width: 40%; /* Limits the width of the code block */
+    max-height: 300px; /* Limits the height of the code block */
+    margin-top: 20px; /* Adds space above the code block */
+    text-align: left; /* Aligns code to the left */
+    padding: 10px; /* Adds padding inside the code block */
+    border-radius: 5px; /* Rounds the corners of the code block */
 }
 
 .timeline-wrapper {

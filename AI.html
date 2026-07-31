@@ -13,34 +13,195 @@
         <section id="introduction">
             <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector.png" alt="Welcome Image"></a>
             <h1 id="welcome">AI, Machine Learning, and Data Science Projects</h1>
-            <div class="timeline-wrapper">
-                <div class="timeline-track">
-                    <div class="timeline-progress" id="progress-line"></div>
-                    
-                    <div class="timeline-dots">
-                    <button class="dot active" data-index="0"></button>
-                    <button class="dot" data-index="1"></button>
-                    <button class="dot" data-index="2"></button>
-                    <button class="dot" data-index="3"></button>
-                    <button class="dot" data-index="4"></button>
-                    <button class="dot" data-index="5"></button>
+                    <h2 id="event-year">2024</h2>
+                    <h3 id="event-title">Introduction to Machine Learning</h3>
+                    <p id="event-desc">First 3 models I had to model from scratch were KNN, Decision Trees, Naïve Bayes, and SVM. Furthermore, 
+                        I implemented various evaluation metrics to conduct an ablation study between them.
+                    </p>
+                    <div id="code-block-container">
+<pre id="code-block"><code>#find max frequency algorithm(KNN algo)
+for i in range(len(ted)):
+    max=0
+    charnum=0
+    for j in range(Kval):
+        charnum=traintype[i][j]
+        counter=0
+        for k in range(Kval):
+            if charnum==traintype[i][k]:
+                counter+=1
+            
+        if counter>max:
+            max=charnum
+        
+    
+    predval.append(max)
+            
+print("\nthese are the actual types of each glass: ",(testtype))
+print("\nthese are the predicted types from the KNN algorithm with k=3: ",(predval))</code></pre>
+
+<pre id="code-block"><code>#example of SVM algorithm
+
+def svm(trd,ted): #trd = training data, ted = test data
+
+........
+
+for i in range (lc):       
+    for index,x_i in enumerate(invttlist): #invttlist = inverted test list
+        #print(x_i)
+        if (result[index]*(np.dot(x_i,w)-b)) <1 :
+            # Update Weights and Bias for Misclassified Points
+            w = w - learning_rate * (2*lambda_parameter*w-np.dot(x_i,result[index]))
+            b = b - learning_rate * result[index]
+        else:
+            # Decay weights if correctly classified
+            w = w - learning_rate * (2*lambda_parameter*w)
+
+testvals=[] #testvals
+predvals=[] #prediction values
+
+#create 2d arrays for testset
+for i in range(9):
+    testvals.append([])
+
+#fill test set with values
+for i in range(9):
+    for j in (ted[Featnames[i]]):
+        testvals[i].append(j)
+
+invtest=transpose(testvals)
+wt=w.transpose()
+
+for i in range (len(invtest)):
+    x=np.dot(invtest[i],wt)-b
+    predvals.append((x))
+
+posmatch=0
+for i in range(len(predvals)):
+    if predvals[i]>=0:
+        posmatch+=1
+
+return w,b,predvals
+</code></pre>
                     </div>
-                </div>
-
-                <div class="timeline-content" id="content-display">
-                    <h2 id="event-year">2015</h2>
-                    <h3 id="event-title">Introduction to 3D Modeling</h3>
-                    <p id="event-desc">I started my journey in 3D modeling in 2015 with Techne for minecraft.</p>
-                    <img id="event-image" src="./src/techne.png" alt="Techne Software">
-                </div>
-
-                <div class="timeline-controls">
-                    <button id="btn-play">Auto-Play Sequence</button>
-                    <button id="btn-reset">Reset</button>
-                </div>
-
-            </div>
         </section>
+
+        <section id="introduction">
+                    <h2 id="event-year">2025-2026</h2>
+                    <h3 id="event-title">Introduction to Multi-layer perceptrons and Neural Networks for data analysis</h3>
+                    <p id="event-desc">These projects focused on implementing and training multi-layer perceptrons for data classification tasks, and,
+                         applied data manipulation techniques for Computer Vision applications.
+                        <br> Using algorithms and libraries such as Baackpropagation, Sorbel edge detection, and OpenCV.
+                    </p>
+                    <div id="code-block-container">
+<pre id="code-block"><code>#Example of a multi-layer perceptron for data classification
+
+# Training with validation metrics
+max_epochs = 10
+learning_rate = 0.0001
+list_loss = []        # Training loss
+list_val_loss = []    # Validation loss
+list_val_acc = []     # Validation accuracy
+
+for e in range(max_epochs):
+    # Training phase
+    loss_arr = []
+    for i in range(len(data_train)):
+        y_pre, z4, z3, z2, z1 = forward_pass(data_train[i]/255.0)
+        weights4, delta_l, bias4 = backward_last_layer_pass(z4, z3, weights4, learning_rate, y_pre, labels_train[i], bias4)
+        weights3, delta_l2, bias3 = backward_hidden_layer_pass(delta_l, weights4, weights3, z3, z2, learning_rate, bias3)
+        weights2, delta_l3, bias2 = backward_hidden_layer_pass(delta_l2, weights3, weights2, z2, z1, learning_rate, bias2)
+        input_val = (data_train[i]/255.0).reshape(-1,1)
+        weights1, delta_l4, bias1 = backward_hidden_layer_pass(delta_l3, weights2, weights1, z1, input_val, learning_rate, bias1)
+
+        loss = cross_entropy_loss(labels_train[i], y_pre)
+        loss_arr.append(loss)
+    
+    train_loss = np.mean(loss_arr)
+    list_loss.append(train_loss)
+
+    # Validation phase
+    val_loss_arr = []
+    val_predictions = []
+    for i in range(len(filtered_data_test)):
+        y_pre, z4, z3, z2, z1 = forward_pass(filtered_data_test[i]/255.0)
+        val_loss = cross_entropy_loss(filtered_labels_test[i], y_pre)
+        val_loss_arr.append(val_loss)
+        val_predictions.append(np.argmax(y_pre))
+    
+    val_loss = np.mean(val_loss_arr)
+    val_acc = accuracy(filtered_labels_test, val_predictions)
+    list_val_loss.append(val_loss)
+    list_val_acc.append(val_acc)
+
+    if list_loss[e] > list_loss[e-1] and e > 0:
+        learning_rate = learning_rate*0.5
+    
+    print(f"Epoch {e+1}/{max_epochs}, Train Loss: {train_loss:.4f}, Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.4f}")
+
+    if train_loss < 1.1:
+        print(f"Stopping at epoch {e+1} with loss {train_loss:.4f} because target achieved")
+        break</code></pre>
+
+<pre id="code-block"><code>#Example of a computer vision project using OpenCV for IMG data conversion and manipulation, ORB for feature detection, and a custom KNN matcher for image matching.
+    
+# Load images
+img1 = cv2.imread('InfoLab1.png', cv2.IMREAD_GRAYSCALE)
+img2 = cv2.imread('InfoLab2.png', cv2.IMREAD_GRAYSCALE)
+img3 = cv2.imread('NotreDame1.png', cv2.IMREAD_GRAYSCALE)
+img4 = cv2.imread('NotreDame2.png', cv2.IMREAD_GRAYSCALE)
+
+# Initialize ORB detector
+# nfeatures: how many points to look for
+orb = cv2.ORB_create(nfeatures=4000)
+
+# Find keypoints and descriptors
+kp1, des1 = orb.detectAndCompute(img1, None)
+kp2, des2 = orb.detectAndCompute(img2, None)
+kp3, des3 = orb.detectAndCompute(img3, None)
+kp4, des4 = orb.detectAndCompute(img4, None)
+
+# Create BFMatcher object with Hamming distance
+# crossCheck=False is required to use the Ratio Test later
+bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=False)
+
+# print(des1[0])  # Example descriptor for the first keypoint
+# print(des2[0])  # Example descriptor for the first keypoint in the second image
+
+def custom_knn_matcher(des1, des2):
+    matches_list = []
+    
+    # Ensure descriptors are uint8 for bitwise operations
+    des1 = des1.astype(np.uint8)
+    des2 = des2.astype(np.uint8)
+
+    for i in range(len(des1)):
+        # Calculate Hamming Distance: 
+        # 1. XOR finds differing bits
+        # 2. .unpackbits + .sum counts the 1s efficiently in NumPy
+        diff = np.bitwise_xor(des1[i], des2)
+        # Summing bits across the 32 bytes of the ORB descriptor
+        dist = np.unpackbits(diff, axis=1).sum(axis=1)
+        
+        # Find indices of the two smallest distances
+        idx2 = np.argpartition(dist, 2)[:2] # Faster than sort for just 2 elements, due to only needing to find the two smallest, and not the rest
+        idx2 = idx2[np.argsort(dist[idx2])] # Ensure d1 is actually smaller than d2
+        
+        d1, d2 = dist[idx2[0]], dist[idx2[1]]
+        
+        # Manually construct OpenCV DMatch objects
+        m = cv2.DMatch(i, int(idx2[0]), float(d1))
+        n = cv2.DMatch(i, int(idx2[1]), float(d2))
+        
+        matches_list.append([m, n])
+        
+    return matches_list
+
+matches = custom_knn_matcher(des1, des2)
+matches2 = custom_knn_matcher(des3, des4)
+</code></pre>
+                    </div>
+        </section>
+
         <section id="recent-projects">
             <h2 id="activities-heading">Recent Projects</h2>
             <p>Fire fighting robot development</p>
