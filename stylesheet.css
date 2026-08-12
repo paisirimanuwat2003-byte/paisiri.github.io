@@ -226,27 +226,6 @@ section {
     /* Adds a soft green glow */
 }
 
-.illusion {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    z-index: -1;
-    /* Ensure it floats above everything */
-    position: absolute;
-    transform: translate(-75%, -40%);
-    pointer-events: none;
-    /* Allows mouse to pass through to click the text */
-    /* Optional: Size and Style */
-    width: 200px;
-    height: auto;
-}
-
-#desc-container:hover .illusion {
-    opacity: 1;
-    /* Add a tiny upwards float animation when it appears */
-    transform: translate(-75%, -40%);
-}
-
-
 /* 3. Style the hidden button */
 .cyber-button {
     /* Hides the button and pushes it down slightly */
