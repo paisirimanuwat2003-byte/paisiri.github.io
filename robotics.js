@@ -1,12 +1,12 @@
 // 1. Store the event data in an Array of Objects
 const eventsData = [
-    { year: "2017", title: "Introduction to Programmable Modules, Arduino Uno", desc: "I first encountered a microcontroller in the form of an Arduino Uno, during a classroom group project. Requiring me to use Scratch in the process for beginner programming, my group and I were able to create a simple robot that could follow a line on the ground.", img: "./src/arduino.jpg" },
-    { year: "2023", title: "Introduction to a new programmable module, Micro:bit", desc: "In 2023, I was introduced to a new programmable module, the Micro:bit. This module was introduced as part of the university's program which I was part of, and, allowed me to write my first bare-metal program.", img: "./src/microbit.jpg" },
-    { year: "2024", title: "Self study of robotics and programming", desc: "In 2024, I began self-studying robotics and programming, which allowed me to gain a deeper understanding of the field. Consequently, I decided to plan my dissertation on the topic.", img: "./src/prototype_design.jpg" },
-    { year: "2025", title: "Dissertation on Robotics and Programming", desc: "In 2025, I started my over a year long project, over the summer of my sophomore year, by creating a basic prototype/ first few iterations of my fire fighting robot or I-BO.", img: "./src/4th_iteration.jpg" },
-    { year: "2026", title: "Finalizing the Fire Fighting Robot, I-BO", desc: "In 2026, I finalized my fire fighting robot, I-BO, and presented it to my university's faculty. The robot was able to successfully meet most of my expectations and all of the requirements and then some thanks to the help of my supervisor.", img: "./src/supervisor.jpg" },
+  { year: "2017", title: "Introduction to Programmable Modules, Arduino Uno", desc: "I first encountered a microcontroller in the form of an Arduino Uno, during a classroom group project. Requiring me to use Scratch in the process, for beginner programming, my group and I were able to create a simple robot that could follow a line on the ground.", img: "./src/arduino.jpg" },
+  { year: "2023", title: "Introduction to a new programmable module, Micro:bit", desc: "In 2023, I was introduced to a new programmable module, the Micro:bit. This module was introduced as part of the university's program which I was part of, and, allowed me to write my first bare-metal program.", img: "./src/microbit.jpg" },
+  { year: "2024", title: "Self study of robotics and programming", desc: "In 2024, I began self-studying robotics and programming, which allowed me to gain a deeper understanding of the field. Consequently, I decided to plan my dissertation on the topic.", img: "./src/prototype_design.jpg" },
+  { year: "2025", title: "Dissertation on Robotics and Programming", desc: "In 2025, I started my over a year long project, over the summer of my sophomore year, by creating a basic prototype/ first few iterations of my fire fighting robot or I-BO.", img: "./src/4th_iteration.jpg" },
+  { year: "2026", title: "Finalizing the Fire Fighting Robot, I-BO", desc: "In 2026, I finalized my fire fighting robot, I-BO, and presented it to my university's faculty. The robot was able to successfully meet most of my expectations and all of the requirements and then some thanks to the help of my supervisor.", img: "./src/supervisor.jpg" },
 ];
-  
+
 // 1.1 resizing the image to fit the container
 
 eventsData[0].style = "width: 100%; height: auto; object-fit: cover;";
@@ -54,8 +54,8 @@ function goToEvent(index) {
 dots.forEach((dot) => {
   dot.addEventListener('click', (e) => {
     // Stop auto-play if the user clicks manually
-    clearInterval(playInterval); 
-    
+    clearInterval(playInterval);
+
     // Get the index number from the HTML 'data-index' attribute
     const clickedIndex = parseInt(e.target.getAttribute('data-index'));
     goToEvent(clickedIndex);
@@ -66,7 +66,7 @@ dots.forEach((dot) => {
 playBtn.addEventListener('click', () => {
   // Clear any existing intervals so they don't overlap
   clearInterval(playInterval);
-  
+
   // If we are already at the end, start over before playing
   if (currentIndex === dots.length - 1) {
     goToEvent(0);

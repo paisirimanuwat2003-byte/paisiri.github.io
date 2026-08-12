@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,37 @@
     <link rel="stylesheet" href="stylesheet.css">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
+
 <body>
     <!-- <div id="loading-screen">
         <div class="glitch" data-text="SYSTEM_BOOT">SYSTEM_BOOT</div>
     </div> -->
     <div id="app-wrapper">
         <section id="introduction">
-            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector_white.png" alt="Welcome Image"></a>
+            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector_white.png"
+                    alt="Welcome Image"></a>
             <img id="pfp" src="./src/pfp.jpg" alt="Profile Picture">
             <div id="desc-container">
-                <p class="glitch-text"  id="desc" data-text="Hi I'm Pai and I am a computer science graduate with a passion for innovation and problem-solving. 
+                <p class="glitch-text" id="desc" data-text="Hi I'm Pai and I am a computer science graduate with a passion for innovation and problem-solving. 
                     I enjoy learning new technologies and applying my skills to real-world projects. My interests and specializations
-                    revolve around web development, 3D modeling and animation, AI and machine learning, and robotics." onclick="">
-                    Hi I'm Pai and I am a computer science graduate with a passion for innovation and problem-solving. 
-                    I enjoy learning new technologies and applying my skills to real-world projects. My interests and specializations
+                    revolve around web development, 3D modeling and animation, AI and machine learning, and robotics."
+                    onclick="">
+                    Hi I'm Pai and I am a computer science graduate with a passion for innovation and problem-solving.
+                    I enjoy learning new technologies and applying my skills to real-world projects. My interests and
+                    specializations
                     revolve around web development, 3D modeling and animation, AI and machine learning, and robotics.
                 </p>
                 <button id="debug" class="cyber-button">Debug</button>
+                <img src="./src/illusion.gif" alt="illusion" class="illusion">
+            </div>
+        </section>
+        <section id="recent-projects">
+            <div style="font-size: 30px; font-weight: bold; margin-bottom: 1vh;">My most recent project </div>
+            <div style="font-size: 25px; margin-bottom: 4vh; margin-top: 1vh;">I-BO</div>
+            <div class="canva-wrapper">
+                <iframe loading="lazy" src="https://www.canva.com/design/DAHJwC8ZA3s/2-BnILzfindRVVda48ZRgw/view?embed"
+                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                </iframe>
             </div>
         </section>
         <section id="projects">
@@ -32,9 +47,9 @@
                 <img src="./src/sketchup.png" alt="Topic Icon" class="topic-icon">
                 <div class="topic-text">
                     <a href="./3D_mod_ani.html" class="project-link">
-                    <h3>3D modeling and animation</h3>
-                    <p>Softwares and type of 3D models I have worked with.</p>
-                    </a>    
+                        <h3>3D modeling and animation</h3>
+                        <p>Softwares and type of 3D models I have worked with.</p>
+                    </a>
                 </div>
             </div>
             <div class="bullet-point-gap"></div>
@@ -42,8 +57,8 @@
                 <img src="./src/web_2.png" alt="Topic Icon" class="topic-icon">
                 <div class="topic-text">
                     <a href="./web_dev.html" class="project-link">
-                    <h3>Web development</h3>
-                    <p>Websites I have created and maintained.</p>
+                        <h3>Web development</h3>
+                        <p>Websites I have created and maintained.</p>
                     </a>
                 </div>
             </div>
@@ -52,8 +67,8 @@
                 <img src="./src/electronic_1.jpg" alt="Topic Icon" class="topic-icon">
                 <div class="topic-text">
                     <a href="./robotics.html" class="project-link">
-                    <h3>Robotics and Embedded Systems</h3>
-                    <p>My experience with robotics and hobbyist electronic modules.</p>
+                        <h3>Robotics and Embedded Systems</h3>
+                        <p>My experience with robotics and hobbyist electronic modules.</p>
                     </a>
                 </div>
             </div>
@@ -62,49 +77,32 @@
                 <img src="./src/AI_1.png" alt="Topic Icon" class="topic-icon">
                 <div class="topic-text">
                     <a href="./AI.html" class="project-link">
-                    <h3>AI, Machine Learning, and Data Science</h3>
-                    <p>AI, Machine Learning, and Data Science projects.</p>
+                        <h3>AI, Machine Learning, and Data Science</h3>
+                        <p>AI, Machine Learning, and Data Science projects.</p>
                     </a>
                 </div>
             </div>
-        </section>
-        <section id="recent-projects">
-            <h2 id="activities-heading">Recent Projects</h2>
-            <p>Fire fighting robot development</p>
-            <!-- This empty box is styled by your CSS and ready for the 3D model -->
-            <model-viewer 
-                id="canvas-container"
-                src="./src/robot iteration 10 chassis.glb" 
-                environment-image="neutral"
-                shadow-intensity="1"
-                camera-controls 
-                auto-rotate
-                ar
-                environment-image="neutral"  
-                exposure="0.5"               
-                shadow-intensity="1"         
-                shadow-softness="0.5">       
-            </model-viewer>
         </section>
         <section id="about">
             <h2 id="about-heading">About Me</h2>
             </p>
             <h2 id="contact-heading">Contact</h2>
-            <p>If you would like to get in touch with me, please feel free to reach out via email at <a href="mailto:paisirimanuwat2003@gmail.com">paisirimanuwat2003@gmail.com</a>.</p>
+            <p>If you would like to get in touch with me, please feel free to reach out via email at <a
+                    href="mailto:paisirimanuwat2003@gmail.com">paisirimanuwat2003@gmail.com</a>.</p>
         </section>
     </div>
 
     <script>
         // Wait for the HTML to fully load before running the script
         document.addEventListener('DOMContentLoaded', () => {
-            
+
             // Grab the text and the button
             const textTarget = document.querySelector('.glitch-text');
             const hiddenBtn = document.getElementById('debug');
 
             // Listen for a click on the text
             textTarget.addEventListener('click', () => {
-                
+
                 // Toggle adds the class if it's missing, and removes it if it's there
                 hiddenBtn.classList.toggle('revealed');
 
@@ -117,8 +115,9 @@
                 textTarget.classList.toggle('resolved');
                 hiddenBtn.classList.remove('revealed'); // Hide the button again
             });
-            
+
         });
     </script>
 </body>
+
 </html>

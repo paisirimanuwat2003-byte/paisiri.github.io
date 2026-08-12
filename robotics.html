@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,34 @@
     <!-- CORRECTED URL -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
+
 <body>
     <div id="app-wrapper">
         <section id="introduction">
-            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector.png" alt="Welcome Image"></a>
+            <a href="index.html" class="Logo-container"><img id="welcome" src="./src/Logo_vector.png"
+                    alt="Welcome Image"></a>
             <h1 id="welcome">Robotics and Embedded Systems Journey</h1>
             <div class="timeline-wrapper">
                 <div class="timeline-track">
                     <div class="timeline-progress" id="progress-line"></div>
-                    
+
                     <div class="timeline-dots">
-                    <button class="dot active" data-index="0"></button>
-                    <button class="dot" data-index="1"></button>
-                    <button class="dot" data-index="2"></button>
-                    <button class="dot" data-index="3"></button>
-                    <button class="dot" data-index="4"></button>
-                    <!-- <button class="dot" data-index="5"></button> -->
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                        <button class="dot" data-index="3"></button>
+                        <button class="dot" data-index="4"></button>
+                        <!-- <button class="dot" data-index="5"></button> -->
                     </div>
                 </div>
 
                 <div class="timeline-content" id="content-display">
                     <h2 id="event-year">2017</h2>
                     <h3 id="event-title">Introduction to programmable modules, Arduino Uno</h3>
-                    <p id="event-desc">I first encountered a microcontroller in the form of an Arduino Uno, during a classroom group project. Requiring me to use Scratch in the process for beginner
-                    programming, my group and I were able to create a simple robot that could follow a line on the ground. 
+                    <p id="event-desc">I first encountered a microcontroller in the form of an Arduino Uno, during a
+                        classroom group project. Requiring me to use Scratch in the process, for beginner
+                        programming, my group and I were able to create a simple robot that could follow a line on the
+                        ground.
                     </p>
                     <img id="event-image" src="./src/arduino.jpg" alt="Arduino Uno">
                 </div>
@@ -47,22 +52,14 @@
             <h2 id="activities-heading">Recent Projects</h2>
             <p>Fire fighting robot development</p>
             <!-- This empty box is styled by your CSS and ready for the 3D model -->
-            <model-viewer 
-                id="canvas-container"
-                src="./src/robot iteration 10 chassis.glb" 
-                environment-image="neutral"
-                shadow-intensity="1"
-                camera-controls 
-                auto-rotate
-                ar
-                environment-image="neutral"  
-                exposure="0.5"               
-                shadow-intensity="1"         
-                shadow-softness="0.5">       
+            <model-viewer id="canvas-container" src="./src/robot iteration 10 chassis.glb" environment-image="neutral"
+                shadow-intensity="1" camera-controls auto-rotate ar environment-image="neutral" exposure="0.5"
+                shadow-intensity="1" shadow-softness="0.5">
             </model-viewer>
         </section>
     </div>
 
     <script src="robotics.js"></script>
 </body>
+
 </html>

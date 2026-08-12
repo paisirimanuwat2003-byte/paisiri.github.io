@@ -2,13 +2,15 @@
 @import url('https://googleapis.com');
 
 /* Lock the browser window completely solid */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden; /* Prevents the body from scrolling */
-    background: #000000; 
-    color: #FFFFFF; 
+    overflow: hidden;
+    /* Prevents the body from scrolling */
+    background: #000000;
+    color: #FFFFFF;
     font-family: 'Orbitron', sans-serif;
     letter-spacing: 3px;
 }
@@ -18,9 +20,11 @@ p {
     padding: 0;
     line-height: 1.5;
 }
-ul{
+
+ul {
     margin-bottom: 2vh;
 }
+
 li {
     margin-top: 1vh;
     margin-bottom: 1vh;
@@ -32,15 +36,17 @@ li {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Smooth scroll support for iOS Safari */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll support for iOS Safari */
 }
 
 /* Every section matches the container sizes exactly */
 section {
     height: 100vh;
     scroll-snap-align: start;
-    scroll-snap-stop: always; /* Forces browser to stop at each section */
-    overflow: hidden;         
+    scroll-snap-stop: always;
+    /* Forces browser to stop at each section */
+    overflow: hidden;
     /* Perfect center alignment for text and canvases */
     display: flex;
     flex-direction: column;
@@ -50,81 +56,160 @@ section {
 
 #introduction {
     display: grid;
-    grid-template-areas: 
-    'logo logo logo'
-    'pfp desc desc';
+    grid-template-areas:
+        'logo logo logo'
+        'pfp desc desc';
 
-    min-height: 100vh; 
-    background-color: #000;  /* Dark background for the glitch effect */
+    min-height: 100vh;
+    background-color: #000;
+    /* Dark background for the glitch effect */
     animation: signal-loss 1.6s ease-out both;
 }
 
 /* The exact timeline of the glitch */
 @keyframes signal-loss {
-    0% { transform: translateY(0); opacity: 1; filter: grayscale(0); }
-    5% { transform: translateY(-20px); opacity: 0.4; filter: grayscale(1); }
-    10% { transform: translateY(10px); opacity: 0.7; }
-    15% { transform: translateY(-5px); opacity: 0.2; }
-    25% { transform: translateY(0); opacity: 1; filter: grayscale(0); }
-    100% { opacity: 1; }
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: grayscale(0);
+    }
+
+    5% {
+        transform: translateY(-20px);
+        opacity: 0.4;
+        filter: grayscale(1);
+    }
+
+    10% {
+        transform: translateY(10px);
+        opacity: 0.7;
+    }
+
+    15% {
+        transform: translateY(-5px);
+        opacity: 0.2;
+    }
+
+    25% {
+        transform: translateY(0);
+        opacity: 1;
+        filter: grayscale(0);
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .glitch-text {
     /* THE MOST IMPORTANT LINE: Locks the cyan/magenta clones to the real text */
-    position: relative; 
-    
+    position: relative;
+
     /* Your other text styles */
     color: white;
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 5px;
-    cursor: pointer; /* Makes the mouse turn into a pointing hand on hover */
+    cursor: pointer;
+    /* Makes the mouse turn into a pointing hand on hover */
 }
 
 .glitch-text::before,
 .glitch-text::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .glitch-text::before {
-  left: 3.3px;
-  text-shadow: -2px 0 #00f3ff;
-  background: black;
-  animation: glitch-anim-1 2.25s infinite linear alternate-reverse;
+    left: 3.3px;
+    text-shadow: -2px 0 #00f3ff;
+    background: black;
+    animation: glitch-anim-1 2.25s infinite linear alternate-reverse;
 }
 
 .glitch-text::after {
-  left: -3.3px;
-  text-shadow: -2px 0 #ff00ff;
-  background: black;
-  animation: glitch-anim-2 2.25s infinite linear alternate-reverse;
+    left: -3.3px;
+    text-shadow: -2px 0 #ff00ff;
+    background: black;
+    animation: glitch-anim-2 2.25s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim-1 {
-  0% { clip-path: inset(24% 0 75% 0); }
-  12% { clip-path: inset(5% 0 94% 0); }
-  24% { clip-path: inset(86% 0 6% 0); }
-  36% { clip-path: inset(66% 0 31% 0); }
-  48% { clip-path: inset(48% 0 45% 0); }
-  60% { clip-path: inset(53% 0 45% 0); }
-  72% { clip-path: inset(80% 0 20% 0); }
-  84% { clip-path: inset(76% 0 21% 0); }
-  96% { clip-path: inset(86% 0 5% 0); }
+    0% {
+        clip-path: inset(24% 0 75% 0);
+    }
+
+    12% {
+        clip-path: inset(5% 0 94% 0);
+    }
+
+    24% {
+        clip-path: inset(86% 0 6% 0);
+    }
+
+    36% {
+        clip-path: inset(66% 0 31% 0);
+    }
+
+    48% {
+        clip-path: inset(48% 0 45% 0);
+    }
+
+    60% {
+        clip-path: inset(53% 0 45% 0);
+    }
+
+    72% {
+        clip-path: inset(80% 0 20% 0);
+    }
+
+    84% {
+        clip-path: inset(76% 0 21% 0);
+    }
+
+    96% {
+        clip-path: inset(86% 0 5% 0);
+    }
 }
 
 @keyframes glitch-anim-2 {
-  0% { clip-path: inset(85% 0 14% 0); }
-  12% { clip-path: inset(6% 0 88% 0); }
-  24% { clip-path: inset(29% 0 68% 0); }
-  36% { clip-path: inset(26% 0 72% 0); }
-  48% { clip-path: inset(62% 0 35% 0); }
-  60% { clip-path: inset(16% 0 81% 0); }
-  72% { clip-path: inset(83% 0 10% 0); }
-  84% { clip-path: inset(79% 0 12% 0); }
-  96% { clip-path: inset(68% 0 29% 0); }
+    0% {
+        clip-path: inset(85% 0 14% 0);
+    }
+
+    12% {
+        clip-path: inset(6% 0 88% 0);
+    }
+
+    24% {
+        clip-path: inset(29% 0 68% 0);
+    }
+
+    36% {
+        clip-path: inset(26% 0 72% 0);
+    }
+
+    48% {
+        clip-path: inset(62% 0 35% 0);
+    }
+
+    60% {
+        clip-path: inset(16% 0 81% 0);
+    }
+
+    72% {
+        clip-path: inset(83% 0 10% 0);
+    }
+
+    84% {
+        clip-path: inset(79% 0 12% 0);
+    }
+
+    96% {
+        clip-path: inset(68% 0 29% 0);
+    }
 }
 
 /* When the 'resolved' class is added, hide the glitch layers */
@@ -135,9 +220,32 @@ section {
 
 /* Optional: Change the text color to show it's stabilized */
 .glitch-text.resolved {
-    color: #39FF14; /* Matrix Green */
-    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5); /* Adds a soft green glow */
+    color: #39FF14;
+    /* Matrix Green */
+    text-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    /* Adds a soft green glow */
 }
+
+.illusion {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: -1;
+    /* Ensure it floats above everything */
+    position: absolute;
+    transform: translate(-75%, -40%);
+    pointer-events: none;
+    /* Allows mouse to pass through to click the text */
+    /* Optional: Size and Style */
+    width: 200px;
+    height: auto;
+}
+
+#desc-container:hover .illusion {
+    opacity: 1;
+    /* Add a tiny upwards float animation when it appears */
+    transform: translate(-75%, -40%);
+}
+
 
 /* 3. Style the hidden button */
 .cyber-button {
@@ -145,11 +253,13 @@ section {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: all 0.4s ease-out; /* Creates a smooth fade-in animation */
-    
+    transition: all 0.4s ease-out;
+    /* Creates a smooth fade-in animation */
+
     /* Cyberpunk Styling */
     background: transparent;
-    color: #00FFFF; /* Cyan */
+    color: #00FFFF;
+    /* Cyan */
     border: 1px solid #00FFFF;
     padding: 10px 20px;
     font-family: monospace;
@@ -163,7 +273,8 @@ section {
 .cyber-button.revealed {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0); /* Snaps it back up into place */
+    transform: translateY(0);
+    /* Snaps it back up into place */
 }
 
 /* Optional: Add a hover effect to the button once it appears */
@@ -172,18 +283,21 @@ section {
     color: #000;
 }
 
-.Logo-container{
+.Logo-container {
     height: 20vh;
     width: auto;
-    margin-bottom: 5vh; /* Adds space between the logo and the profile picture */
+    margin-bottom: 5vh;
+    /* Adds space between the logo and the profile picture */
 }
 
 .Logo-container:hover img {
-    filter: brightness(0) invert(1); /* Inverts colors on hover for a striking effect */   
-    transition: filter 1s ease; /* Smooth transition for the hover effect */
+    filter: brightness(0) invert(1);
+    /* Inverts colors on hover for a striking effect */
+    transition: filter 1s ease;
+    /* Smooth transition for the hover effect */
 }
 
-.Logo-container{
+.Logo-container {
     grid-area: logo;
 }
 
@@ -191,118 +305,158 @@ section {
     height: 40%;
 }
 
-#pfp{
+#pfp {
     grid-area: pfp;
     height: 40%;
-    border-radius: 50%; /* Makes the profile picture circular */
-    border: 3px solid white; /* Adds a border around the profile picture */
+    border-radius: 50%;
+    /* Makes the profile picture circular */
+    border: 3px solid white;
+    /* Adds a border around the profile picture */
 }
 
 #desc-container {
     grid-area: desc;
-    padding: 5vw;            /* Adds padding around the description */
+    padding: 5vw;
+    /* Adds padding around the description */
 }
 
 #desc {
-    color: #FFFFFF; 
+    color: #FFFFFF;
     margin: 0;
-    text-align: justify; /* Justifies the text for a clean look like microsoft word stretch*/
+    text-align: justify;
+    /* Justifies the text for a clean look like microsoft word stretch*/
+}
+
+.canva-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.canva-wrapper iframe {
+    width: 70vw;
+    height: 70vh;
 }
 
 #projects {
-    align-items: stretch; /* Stretches the introduction section to fill the width */
-    overflow-y: auto; /* Allows scrolling within the projects section if content overflows */
+    align-items: stretch;
+    /* Stretches the introduction section to fill the width */
+    overflow-y: auto;
+    /* Allows scrolling within the projects section if content overflows */
 }
 
 .bullet-point-gap {
-    height: 5vh; /* Adds space between the topic boxes */
+    height: 5vh;
+    /* Adds space between the topic boxes */
 }
 
 .project-link {
-    color: #FFFFFF; 
+    color: #FFFFFF;
     text-decoration: none;
 }
+
 .project-link:hover {
     color: white;
     transition: color 0.3s ease;
 }
 
 #projects {
-    color: #FFFFFF; 
+    color: #FFFFFF;
     font-size: 1.5rem;
 }
 
 .topic-box {
-  display: flex;       /* 1. Puts the image and text side-by-side */
-  align-items: center; /* 2. Vertically centers the text with the image */
-  gap: 15px;           /* 3. Adds the perfect amount of space between them */
-  
-  /* Make it look like a nice box */
-  padding: 20px;
-  border: 1px solid #aecc02;
-  border-radius: 8px;
-  background-color: rgb(0, 48, 77);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    /* 1. Puts the image and text side-by-side */
+    align-items: center;
+    /* 2. Vertically centers the text with the image */
+    gap: 15px;
+    /* 3. Adds the perfect amount of space between them */
+
+    /* Make it look like a nice box */
+    padding: 20px;
+    border: 1px solid #aecc02;
+    border-radius: 8px;
+    background-color: rgb(0, 48, 77);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .topic-icon {
-  width: 50px;         /* Keep the image tiny */
-  height: 50px;
-  border-radius: 8px;  /* Optional: rounds the image corners */
-  object-fit: cover;
+    width: 50px;
+    /* Keep the image tiny */
+    height: 50px;
+    border-radius: 8px;
+    /* Optional: rounds the image corners */
+    object-fit: cover;
 }
 
 .topic-text h3 {
-  margin: 0 0 5px 0;   /* Removes default spacing above the title */
-  font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    /* Removes default spacing above the title */
+    font-size: 1.2rem;
 }
 
 .topic-text p {
-  margin: 0;           /* Removes default spacing below the paragraph */
-  color: #6b7280;      /* Subtle grey text */
+    margin: 0;
+    /* Removes default spacing below the paragraph */
+    color: #6b7280;
+    /* Subtle grey text */
 }
 
 #activities-heading {
-    color: #FFFFFF; 
+    color: #FFFFFF;
     font-size: 2.5rem;
 }
 
 /* Container for your active 3D model */
 #canvas-container {
     width: 100%;
-    max-width: 1500px; /* Limits the canvas size on larger screens */
-    height: 70vh; 
-    background-color: transparent; /* Allows your dark page background to show through */
-    outline: none; /* Removes focus borders when clicking the 3D model */
+    max-width: 1500px;
+    /* Limits the canvas size on larger screens */
+    height: 70vh;
+    background-color: transparent;
+    /* Allows your dark page background to show through */
+    outline: none;
+    /* Removes focus borders when clicking the 3D model */
 }
 
-#about{
-    align-items: flex-start; /* Aligns the content to the left */
+#about {
+    align-items: flex-start;
+    /* Aligns the content to the left */
 }
 
 .about-image {
-    height: 30%; /* Adjusts the height of the image */
-    width: auto; /* Maintains the aspect ratio of the image */
-    margin-bottom: 20px; /* Adds space below the image */
+    height: 30%;
+    /* Adjusts the height of the image */
+    width: auto;
+    /* Maintains the aspect ratio of the image */
+    margin-bottom: 20px;
+    /* Adds space below the image */
 }
 
 @media (max-width: 768px) {
-    #introduction{
+    #introduction {
         display: grid;
         grid-template-areas:
-        'logo'
-        'pfp'
-        'desc';
+            'logo'
+            'pfp'
+            'desc';
     }
 
     .Logo-container {
-        height: 15vh; /* Reduces the logo size on smaller screens */
+        height: 15vh;
+        /* Reduces the logo size on smaller screens */
     }
+
     #pfp {
-        height: 20vh; /* Reduces the profile picture size on smaller screens */
+        height: 20vh;
+        /* Reduces the profile picture size on smaller screens */
     }
-    #desc{
-        font-size: 0.7rem; /* Slightly smaller text for better readability */
-        text-align: left; /* Aligns the description to the left on smaller screens */
+
+    #desc {
+        font-size: 0.7rem;
+        /* Slightly smaller text for better readability */
+        text-align: left;
+        /* Aligns the description to the left on smaller screens */
     }
 }
